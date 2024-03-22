@@ -29,3 +29,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::get('/x/y/demo', function () {
+    return view('landing');
+})->name('landing');

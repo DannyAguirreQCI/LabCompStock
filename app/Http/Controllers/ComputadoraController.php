@@ -48,19 +48,19 @@ class ComputadoraController extends Controller
             'ubicacion' => 'required',
         ]);
 
-        Computadora::create($request->all());
-        //$computadora = new Computadora();
-        //$computadora->marca = $request->marca;
-        //$computadora->modelo = $request->modelo;
-        //$computadora->numserie = $request->numserie;
-        //$computadora->cpu = $request->cpu;
-        //$computadora->ram = $request->ram;
-        //$computadora->hdd = $request->hdd;
-        //$computadora->gpu = $request->gpu;
-        //$computadora->os = $request->os;
-        //$computadora->estado = $request->estado;
-        //$computadora->ubicacion = $request->ubicacion;
-        //$computadora->save();
+        //Computadora::create($request->all());
+        $computadora = new Computadora();
+        $computadora->marca = $request->marca;
+        $computadora->modelo = $request->modelo;
+        $computadora->numserie = $request->numserie;
+        $computadora->cpu = $request->cpu;
+        $computadora->ram = $request->ram;
+        $computadora->hdd = $request->hdd;
+        $computadora->gpu = $request->gpu;
+        $computadora->os = $request->os;
+        $computadora->estado = $request->estado;
+        $computadora->ubicacion = $request->ubicacion;
+        $computadora->save();
 
         // Redireccion
         return redirect()->route('computadora.index');
@@ -100,18 +100,18 @@ class ComputadoraController extends Controller
             'ubicacion' => 'required',
         ]);
 
-        $computadora->update($request->all());
-        //$computadora->marca = $request->marca;
-        //$computadora->modelo = $request->modelo;
-        //$computadora->numserie = $request->numserie;
-        //$computadora->cpu = $request->cpu;
-        //$computadora->ram = $request->ram;
-        //$computadora->hdd = $request->hdd;
-        //$computadora->gpu = $request->gpu;
-        //$computadora->os = $request->os;
-        //$computadora->estado = $request->estado;
-        //$computadora->ubicacion = $request->ubicacion;
-        //$computadora->save();
+        //$computadora->update($request->all());
+        $computadora->marca = $request->marca;
+        $computadora->modelo = $request->modelo;
+        $computadora->numserie = $request->numserie;
+        $computadora->cpu = $request->cpu;
+        $computadora->ram = $request->ram;
+        $computadora->hdd = $request->hdd;
+        $computadora->gpu = $request->gpu;
+        $computadora->os = $request->os;
+        $computadora->estado = $request->estado;
+        $computadora->ubicacion = $request->ubicacion;
+        $computadora->save();
 
         return redirect()->route('computadora.show', $computadora);
     }
