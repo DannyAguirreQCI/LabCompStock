@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ComputadoraController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +20,7 @@ Route::get('/', function () {
 });
 
 Route::resource('computadora', ComputadoraController::class)->middleware('auth');
+Route::resource('product', ProductController::class)->middleware('admin');
 
 Route::middleware([
     'auth:sanctum',

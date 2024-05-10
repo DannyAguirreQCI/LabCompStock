@@ -58,4 +58,19 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function assignRole($role)
+    {
+        $this->role = $role;
+        $this->save();
+    }
+    /*use App\Models\User;
+    No se usa aqui, se usa en el archivo de seeder
+    $user = User::find(1); // Obtener el usuario deseado
+    $user->assignRole('admin'); // Asignar el rol de administrador al usuario */
+
+    public function isAdmin()
+    {
+        return $this->role === 'admin';
+    }
 }

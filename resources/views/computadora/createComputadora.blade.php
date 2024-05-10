@@ -9,54 +9,54 @@
             @csrf
             
             <label for="marca">Marca:</label>
-            <input type="text" name="marca" value="{{ old('marca') }}" required>
+            <input type="text" style="height: 30px;" name="marca" value="{{ old('marca') }}" required>
             @error('marca')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
             <br>
 
             <label for="modelo">Modelo:</label>
-            <input type="text" name="modelo" value="{{ old('modelo') }}">
+            <input type="text" style="height: 30px;" name="modelo" value="{{ old('modelo') }}">
             @error('modelo')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
             <br>
             
             <label for="numserie">Numero de serie:</label>
-            <input type="text" name="numserie" value="{{ old('numserie') }}">
+            <input type="text" style="height: 30px;" name="numserie" value="{{ old('numserie') }}">
             @error('numserie')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
             <br>
 
             <label for="cpu">Procesador:</label>
-            <input type="text" name="cpu" value="{{ old('cpu') }}">
+            <input type="text" style="height: 30px;" name="cpu" value="{{ old('cpu') }}">
             @error('cpu')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
             <br>
 
             <label for="ram">Memoria RAM:</label>
-            <input type="text" name="ram" value="{{ old('ram') }}">
+            <input type="text" style="height: 30px;" name="ram" value="{{ old('ram') }}">
             @error('ram')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
             <br>
 
             <label for="hdd">Almacenamiento:</label>
-            <input type="text" name="hdd" value="{{ old('hdd') }}">
+            <input type="text" style="height: 30px;" name="hdd" value="{{ old('hdd') }}">
             @error('hdd')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
             <br>
 
             <label for="gpu">Tarjeta gráfica:</label>
-            <input type="text" name="gpu" value="{{ old('gpu') }}">
+            <input type="text" style="height: 30px;" name="gpu" value="{{ old('gpu') }}">
             @error('gpu')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
             <br>
-
+            <label for="os">Sistema Operativo:</label>
             <select name="os" id="os">
                 <option value="Windows" @selected(old('os') == 'Windows')>Windows</option>
                 <option value="MacOS" @selected(old('os') == 'MacOS')>MacOS</option>
@@ -64,14 +64,14 @@
                 <option value="Otro" @selected(old('os') == 'Otro')>Otro</option>
             </select>
             <br>
-
+            <label for="estado">Estatus:</label>
             <select name="estado" id="estado">
                 <option value="Usandose" @selected(old('estado') == 'Usandose')>Usandose</option>
                 <option value="Stock" @selected(old('estado') == 'Stock')>Stock</option>
                 <option value="Mantenimiento" @selected(old('estado') == 'Mantenimiento')>Mantenimiento</option>
             </select>
             <br>
-            
+            <label for="ubicacion">Ubicacion:</label>
             <select name="ubicacion" id="ubicacion">
                 <option value="LAB01" @selected(old('ubicacion') == 'LAB01')>LAB01</option>
                 <option value="LAB02" @selected(old('ubicacion') == 'LAB02')>LAB02</option>
@@ -82,7 +82,9 @@
                 <option value="TALLER" @selected(old('ubicacion') == 'TALLER')>TALLER</option>
             </select>
             <br>
-            <input type="submit" value="Enviar">
+            <x-button class="ms-4">
+                    {{ __('Enviar') }}
+            </x-button>
         </form>
     </x-slot>
 </body>
