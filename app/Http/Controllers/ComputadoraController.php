@@ -38,7 +38,7 @@ class ComputadoraController extends Controller
         $request->validate([
             'marca' => ['required', 'string', 'max:255'],
             'modelo' => 'required',
-            'numserie' => 'required|string|min:10',
+            'precio' => 'required',
             'cpu' => 'required',
             'ram' => 'required',
             'hdd' => 'required',
@@ -52,7 +52,7 @@ class ComputadoraController extends Controller
         $computadora = new Computadora();
         $computadora->marca = $request->marca;
         $computadora->modelo = $request->modelo;
-        $computadora->numserie = $request->numserie;
+        $computadora->precio = $request->precio;
         $computadora->cpu = $request->cpu;
         $computadora->ram = $request->ram;
         $computadora->hdd = $request->hdd;
@@ -90,7 +90,7 @@ class ComputadoraController extends Controller
         $request->validate([
             'marca' => ['required', 'string', 'max:255'],
             'modelo' => 'required',
-            'numserie' => 'required|string|min:10',
+            'precio' => 'required',
             'cpu' => 'required',
             'ram' => 'required',
             'hdd' => 'required',
@@ -103,7 +103,7 @@ class ComputadoraController extends Controller
         //$computadora->update($request->all());
         $computadora->marca = $request->marca;
         $computadora->modelo = $request->modelo;
-        $computadora->numserie = $request->numserie;
+        $computadora->precio = $request->precio;
         $computadora->cpu = $request->cpu;
         $computadora->ram = $request->ram;
         $computadora->hdd = $request->hdd;

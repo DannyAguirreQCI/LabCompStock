@@ -14,8 +14,8 @@
             <label for="modelo">Modelo:</label>
             <input type="text" name="modelo" value="{{ old('modelo') ?? $computadora->modelo }}">
             <br>
-            <label for="numserie">Numero de serie:</label>
-            <input type="text" name="numserie" value="{{ old('numserie') ?? $computadora->numserie }}">
+            <label for="precio">Precio:</label>
+            <input type="text" name="precio" value="{{ old('precio') ?? $computadora->precio }}">
             <br>
             <label for="cpu">Procesador:</label>
             <input type="text" name="cpu" value="{{ old('cpu') ?? $computadora->cpu }}">

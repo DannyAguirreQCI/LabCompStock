@@ -22,9 +22,9 @@
             @enderror
             <br>
             
-            <label for="numserie">Numero de serie:</label>
-            <input type="text" style="height: 30px;" name="numserie" value="{{ old('numserie') }}">
-            @error('numserie')
+            <label for="precio">Precio:</label>
+            <input type="text" style="height: 30px;" name="precio" value="{{ old('precio') }}">
+            @error('precio')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
             <br>

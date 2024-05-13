@@ -9,10 +9,17 @@ class Product extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['nombre', 'precio', 'type'];
+
     /**
      * Indicates if the model should be timestamped.
      *
      * @var bool
      */
     public $timestamps = false;
+
+    public function carts()
+    {
+        return $this->belongsToMany(Cart::class)->withPivot('quantity');
+    }
 }

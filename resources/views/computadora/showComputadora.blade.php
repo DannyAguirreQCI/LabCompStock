@@ -7,7 +7,7 @@
         <ul>
             <li>Marca: {{ $computadora->marca }}</li>
             <li>Modelo: {{ $computadora->modelo }}</li>
-            <li>Numero de serie: {{ $computadora->numserie }}</li>
+            <li>Precio: {{ $computadora->precio }}</li>
             <li>Procesador: {{ $computadora->cpu }}</li>
             <li>Memoria RAM: {{ $computadora->ram }}</li>
             <li>Almacenamiento: {{ $computadora->hdd }}</li>

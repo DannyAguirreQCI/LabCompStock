@@ -77,13 +77,12 @@
             <hr class="sidebar-divider d-none d-md-block">
 
             @auth
+                <!-- Heading -->
+                <div class="sidebar-heading">
+                    Productos
+                </div>
                 @if (auth()->user()->isAdmin())
                     <!-- Mostrar opciones de administrador -->
-                    <!-- Heading -->
-                    <div class="sidebar-heading">
-                        Productos
-                    </div>
-
                     <!-- Nav Item - Charts -->
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('product.create') }}">
@@ -92,15 +91,29 @@
                     </li>
 
                     <!-- Nav Item - Tables -->
-                    <li class="nav-item active">
+                    <li class="nav-item {{ request()->routeIs('product.index') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('product.index') }}">
                             <i class="fas fa-fw fa-table"></i>
                             <span>Lista Productos</span></a>
                     </li>
-
-                    <!-- Divider -->
-                    <hr class="sidebar-divider d-none d-md-block">
                 @endif
+                <li class="nav-item {{ request()->routeIs('productos.index') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('productos.index') }}">
+                        <i class="fas fa-fw fa-hdd"></i>
+                        <span>Productos Disponibles</span>
+                    </a>
+                </li>
+                <!-- Divider -->
+                <hr class="sidebar-divider d-none d-md-block">
+                <div class="sidebar-heading">
+                    Carrito
+                </div>
+                <li class="nav-item {{ request()->routeIs('cart.show') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('cart.show') }}">
+                        <i class="fas fa-fw fa-shopping-cart"></i>
+                            <span>Ver Carrito</span></a>
+                </li>
+                <hr class="sidebar-divider d-none d-md-block">
             @endauth
 
             <!-- Sidebar Toggler (Sidebar) -->

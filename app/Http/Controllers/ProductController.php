@@ -104,4 +104,9 @@ class ProductController extends Controller
         $product->delete();
         return redirect()->route('product.index');
     }
+    public function productos()
+    {
+        $products = Product::all();
+        return view('productos', compact('products'));
+    }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ComputadoraController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -20,7 +21,14 @@ Route::get('/', function () {
 });
 
 Route::resource('computadora', ComputadoraController::class)->middleware('auth');
+
 Route::resource('product', ProductController::class)->middleware('admin');
+Route::get('/productos', 'App\Http\Controllers\ProductController@productos')->name('productos.index');
+
+Route::get('/checkout', 'CheckoutController@index')->name('checkout');
+Route::get('/cart', 'App\Http\Controllers\CartController@show')->name('cart.show');
+Route::post('/cart/add/{product}', [CartController::class, 'addToCart'])->name('cart.add');
+Route::delete('/cart/remove/{product}', [CartController::class, 'remove'])->name('cart.remove');
 
 Route::middleware([
     'auth:sanctum',
